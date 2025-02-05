@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine? 💖</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: pink;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+        .btn {
+            font-size: 20px;
+            padding: 20px 40px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .yes {
+            background-color: #ff4d79;
+            color: white;
+            transition: transform 0.3s;
+        }
+        .yes:hover {
+            background-color: #ff1a5c;
+        }
+        .no {
+            background-color: #444;
+            color: white;
+        }
+        .gif {
+            display: none;
+            margin-top: 20px;
+            width: 300px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Will you be my Valentine? 💖</h1>
+    <button class="btn yes" onclick="showGif()">Yes</button>
+    <button class="btn no" onclick="increaseYesSize()">No</button>
+    <img class="gif" src="https://media.giphy.com/media/Zv8ebkNSAySEk9iL1a/giphy.gif" alt="Eren Yeager GIF">
+
+    <script>
+        let yesButton = document.querySelector('.yes');
+
+        function showGif() {
+            document.querySelector('.gif').style.display = 'block';
+        }
+
+        function increaseYesSize() {
+            let currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
+            yesButton.style.fontSize = (currentSize + 10) + "px";
+            yesButton.style.padding = (parseInt(window.getComputedStyle(yesButton).paddingTop) + 5) + "px " + (parseInt(window.getComputedStyle(yesButton).paddingLeft) + 10) + "px";
+        }
+    </script>
+
+</body>
+</html>
